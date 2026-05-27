@@ -1,4 +1,4 @@
-package dp.subsequence;
+package com.mk.java.dp.subsequence;
 
 import java.util.Arrays;
 
@@ -39,7 +39,7 @@ public class CoinChange2Memo {
     }
 //    Complexity
 //    Time: O(N × amount)
-//    Space: O(N × amount) + recursion stack
+//    Space: O(N × amount) + com.mk.java.recursion stack
 
 
     //Tabulation (Bottom-Up DP)

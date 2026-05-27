@@ -1,4 +1,4 @@
-package dp.subsequence;
+package com.mk.java.dp.subsequence;
 
 public class CoinChange2 {
 
@@ -27,7 +27,7 @@ public class CoinChange2 {
     }
 //    Complexity
 //    Time: Exponential (2^N)
-//    Space: O(N) recursion stack
+//    Space: O(N) com.mk.java.recursion stack
 
 
     // Improved Solution

@@ -1,4 +1,4 @@
-package dp.Knapsack;
+package com.mk.java.dp.Knapsack;
 
 public class knapsackSol {
 

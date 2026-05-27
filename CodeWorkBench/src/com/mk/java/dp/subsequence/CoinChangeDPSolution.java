@@ -1,4 +1,4 @@
-package dp.subsequence;
+package com.mk.java.dp.subsequence;
 
 public class CoinChangeDPSolution {
     public static void main(String[] args) {
