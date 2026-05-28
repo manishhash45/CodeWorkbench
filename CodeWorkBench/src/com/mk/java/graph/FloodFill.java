@@ -23,6 +23,21 @@ public class FloodFill {
 
         System.out.println("\nAfter Flood Fill:");
           printGrid(grid);
+
+        int[][] grid1 = {
+                {1, 1, 1, 1, 1},
+                {1, 1, 0, 0, 0},
+                {1, 0, 1, 1, 1},
+                {1, 0, 0, 0, 0},
+                {1, 1, 1, 1, 1}
+        };
+        System.out.println("Original Grid:");
+        printGrid(grid1);
+          floodFillDfs(grid1, sr, sc, newColor);
+
+        System.out.println("\nAfter Flood Fill DFS:");
+        printGrid(grid1);
+
     }
 
     private static void printGrid(int[][] grid) {
@@ -33,11 +48,7 @@ public class FloodFill {
             System.out.println();
         }
     }
-//    {1, 1, 1, 1, 1},
-//    {1, 1, 0, 0, 0},
-//    {1, 0, 1, 1, 1},   1,1
-//    {1, 0, 0, 0, 0},
-//    {1, 1, 1, 1, 1}
+
 
     private static int[][] floodFill(int[][] grid, int sr, int sc, int newColor) {
         int m = grid.length - 1;
@@ -71,6 +82,33 @@ public class FloodFill {
             }
         }
         return grid;
+    }
+
+    //{1, 1, 1, 1, 1},
+//    {1, 1, 0, 0, 0},
+//    {1, 0, 1, 1, 1},   1,1
+//    {1, 0, 0, 0, 0},
+//    {1, 1, 1, 1, 1}
+
+    private static int[][] floodFillDfs(int[][] grid, int sr, int sc, int color) {
+        int oldColor = grid[sr][sc];
+        dfs(grid, sr, sc, color, oldColor);
+        return grid;
+    }
+
+    private static void dfs(int[][] grid, int r, int c, int newColor, int oldColor) {
+        grid[r][c] = newColor;
+        int[] dr = {0,-1, 0, 1};
+        int[] dc = {1, 0,-1, 0};
+
+        for (int i = 0; i < 4; i++) {
+            int nr = r + dr[i];
+            int nc = c + dc[i];
+
+            if (nr >= 0 && nr < grid.length && nc >= 0 && nc < grid[0].length && grid[nr][nc] == oldColor) {
+                dfs(grid, nr, nc, newColor, oldColor);
+            }
+        }
     }
 
 
